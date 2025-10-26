@@ -1,0 +1,22 @@
+Environment and dependencies
+
+.env
+venv/
+.ipynb_checkpoints/
+
+Python compiled files
+
+pycache/
+*.pyc
+*.pyo
+*.pyd
+
+Testing/Coverage
+
+.coverage
+htmlcov/
+
+IDE files (VS Code, etc.)
+
+.vscode/
+.idea/
