@@ -10,6 +10,7 @@ load_dotenv()
 # --- Import Routers ---
 from users_api import router as users_router
 from equipment_api import router as equipment_router
+from equipment_category_api import router as equipment_category_router
 from lending_api import router as lending_router
 from analytics_api import router as analytics_router
 
@@ -18,6 +19,7 @@ app = FastAPI(title="School Equipment Lending Portal")
 # --- Include Routers ---
 app.include_router(users_router)
 app.include_router(equipment_router)
+app.include_router(equipment_category_router)
 app.include_router(lending_router)
 app.include_router(analytics_router)
 
