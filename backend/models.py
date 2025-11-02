@@ -13,8 +13,13 @@ class UserBase(BaseModel):
     email: str = Field(..., max_length=150)
     phone_number: Optional[str] = Field(None, max_length=15)
 
-class UserCreate(UserBase):
-    password: str = Field(..., min_length=8)
+class UserCreate(BaseModel):
+    username: str
+    password: str
+    full_name: str
+    email: str
+    phone: Optional[str] = None
+    role: str
 
 class LoginRequest(BaseModel):
     username: str
@@ -25,6 +30,7 @@ class Token(BaseModel):
     token_type: str
     user_id: int
     role: str
+    full_name: str
 
 # --- Equipment Listing & Search ---
 

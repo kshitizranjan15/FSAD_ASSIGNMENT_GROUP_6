@@ -19,7 +19,7 @@ def get_top_requested(current_user: dict = Depends(role_required(["Admin"]))):
         cur = conn.cursor(dictionary=True)
         query = """
         SELECT E.name AS equipment_name, SUM(R.quantity) AS total_units_borrowed
-        FROM LENDING_REQUESTS R JOIN EQUIPMENT E ON R.equipment_id = E.equipment_id
+        FROM lending_requests R JOIN equipments E ON R.equipment_id = E.equipment_id
         GROUP BY E.equipment_id, E.name ORDER BY total_units_borrowed DESC LIMIT 5;
         """
         cur.execute(query)
@@ -36,7 +36,7 @@ def get_average_duration(current_user: dict = Depends(role_required(["Admin"])))
         cur = conn.cursor(dictionary=True)
         query = """
         SELECT E.name AS equipment_name, AVG(DATEDIFF(R.return_date, R.borrow_date)) AS avg_loan_duration_days
-        FROM LENDING_REQUESTS R JOIN EQUIPMENT E ON R.equipment_id = E.equipment_id
+        FROM lending_requests R JOIN equipment E ON R.equipment_id = E.equipment_id
         WHERE R.status = 'Returned' AND R.borrow_date IS NOT NULL AND R.return_date IS NOT NULL
         GROUP BY E.name ORDER BY avg_loan_duration_days DESC;
         """
@@ -55,7 +55,7 @@ def log_damage(log_data: RepairLogCreate, current_user: dict = Depends(get_curre
     try:
         conn = get_connection()
         cur = conn.cursor()
-        insert_query = "INSERT INTO REPAIR_LOG (equipment_id, damage_description, reported_by_user_id, report_date) VALUES (%s, %s, %s, CURDATE())"
+        insert_query = "INSERT INTO repair_log (equipment_id, damage_description, reported_by_user_id, report_date) VALUES (%s, %s, %s, CURDATE())"
         params = (log_data.equipment_id, log_data.damage_description, current_user['user_id'])
         cur.execute(insert_query, params)
         log_id = cur.lastrowid
@@ -72,7 +72,7 @@ def complete_repair(log_id: int, update_data: RepairLogUpdate, current_user: dic
     try:
         conn = get_connection()
         cur = conn.cursor()
-        update_query = "UPDATE REPAIR_LOG SET repair_cost = %s, repaired_by = %s, repair_date = CURDATE() WHERE log_id = %s AND repair_date IS NULL"
+        update_query = "UPDATE repair_log SET repair_cost = %s, repaired_by = %s, repair_date = CURDATE() WHERE log_id = %s AND repair_date IS NULL"
         params = (update_data.repair_cost, update_data.repaired_by, log_id)
         cur.execute(update_query, params)
         conn.commit()
