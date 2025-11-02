@@ -28,9 +28,9 @@ def list_equipment(
         SELECT 
             E.equipment_id, E.name, E.category_id, E.total_quantity, E.available_quantity
         FROM 
-            EQUIPMENT E
+            equipment E
         JOIN 
-            EQUIPMENT_CATEGORY C ON E.category_id = C.category_id
+            equipment_category C ON E.category_id = C.category_id
         WHERE 
             E.available_quantity > 0 
         """
