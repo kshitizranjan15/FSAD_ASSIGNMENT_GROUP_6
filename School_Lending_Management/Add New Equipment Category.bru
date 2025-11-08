@@ -1,0 +1,27 @@
+meta {
+  name: Add New Equipment Category
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://127.0.0.1:8000/equipment_category
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJyb2xlIjoiQWRtaW4iLCJleHAiOjE3NjE1Njc2MDB9.yqadJMK8O1j_-Dd1H2YStEMtA38gTqA802p9TPcVxAU
+}
+
+body:json {
+  {
+    "category_name":"Stationery",
+    "description":"Books,Copy,Magazine"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

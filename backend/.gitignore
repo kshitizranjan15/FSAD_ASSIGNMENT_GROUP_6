@@ -1,22 +1,55 @@
-Environment and dependencies
-
+# -------------------------------------
+# ENVIRONMENTS AND DEPENDENCIES
+# -------------------------------------
 .env
+.env.*
 venv/
-.ipynb_checkpoints/
+.venv/
+env/
+ENV/
+list/
+backend/lib/
+backend/include/
+backend/bin/
+backend/pyvenv.cfg
+backend/**/site-packages/
+**/lib/
+**/Lib/
+**/include/
+**/Include/
+**/bin/
+**/Scripts/
+**/pyvenv.cfg
+**/site-packages/
 
-Python compiled files
+# -------------------------------------
+# PYTHON COMPILED FILES
+# -------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
 
-pycache/
-*.pyc
-*.pyo
-*.pyd
-
-Testing/Coverage
-
+# -------------------------------------
+# TESTING / COVERAGE
+# -------------------------------------
 .coverage
 htmlcov/
+.tox/
+.pytest_cache/
+.mypy_cache/
 
-IDE files (VS Code, etc.)
-
+# -------------------------------------
+# IDE FILES
+# -------------------------------------
 .vscode/
 .idea/
+.DS_Store
+Thumbs.db
+
+# -------------------------------------
+# OTHER TEMP FILES
+# -------------------------------------
+*.log
+*.db
+*.sqlite3
+*.tmp

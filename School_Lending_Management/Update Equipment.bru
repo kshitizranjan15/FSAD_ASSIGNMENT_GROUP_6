@@ -1,0 +1,34 @@
+meta {
+  name: Update Equipment
+  type: http
+  seq: 5
+}
+
+put {
+  url: http://127.0.0.1:8000/equipment/7
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+}
+
+body:json {
+  {
+    "name": "Baseball Bat",
+    "category_id":"2",
+    "total_quantity":"4",
+    "available_quantity":"3"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

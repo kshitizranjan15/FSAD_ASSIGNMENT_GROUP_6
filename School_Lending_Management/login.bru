@@ -1,0 +1,23 @@
+meta {
+  name: login
+  type: http
+  seq: 12
+}
+
+post {
+  url: http://127.0.0.1:8000/users/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "username": "admin123",
+    "password": "AdminPassword123"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

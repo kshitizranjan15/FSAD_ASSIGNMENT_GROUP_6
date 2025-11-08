@@ -1,0 +1,11 @@
+{
+  "version": "1",
+  "name": "School_Lending_Management_API's_End_Points",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ],
+  "size": 0,
+  "filesCount": 0
+}
