@@ -1,0 +1,24 @@
+meta {
+  name: Get All Equipment
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://127.0.0.1:8000/equipment
+  body: none
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJyb2xlIjoiQWRtaW4iLCJleHAiOjE3NjE1NjY5NDd9.kmrvGTU0IF0rrvMWx7h7DK3yMfHUQhA-X6fZnILvLLo
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

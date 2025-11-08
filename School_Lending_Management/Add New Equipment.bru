@@ -1,0 +1,33 @@
+meta {
+  name: Add New Equipment
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://127.0.0.1:8000/equipment
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJyb2xlIjoiQWRtaW4iLCJleHAiOjE3NjE1NjY5NDd9.kmrvGTU0IF0rrvMWx7h7DK3yMfHUQhA-X6fZnILvLLo
+}
+
+body:json {
+  {
+    "name": "Ball",
+    "category_id": "2",
+    "total_quantity": 8,
+    "available_quantity": 3
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
