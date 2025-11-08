@@ -1,237 +1,11 @@
 {
   "info": {
-    "name": "School_Lending_Management_API's_End_Points",
-    "description": "",
+    "name": "FSAD_Equipments_Api's",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
-      "name": "Add New Equipment Category",
-      "event": [],
-      "request": {
-        "method": "POST",
-        "header": [],
-        "auth": {
-          "type": "bearer",
-          "bearer": {
-            "key": "token",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJyb2xlIjoiQWRtaW4iLCJleHAiOjE3NjE1Njc2MDB9.yqadJMK8O1j_-Dd1H2YStEMtA38gTqA802p9TPcVxAU",
-            "type": "string"
-          }
-        },
-        "description": "",
-        "url": {
-          "raw": "http://127.0.0.1:8000/equipment_category",
-          "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1:8000"
-          ],
-          "path": [
-            "equipment_category"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"category_name\":\"Stationery\",\n  \"description\":\"Books,Copy,Magazine\"\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        }
-      }
-    },
-    {
-      "name": "Add New Equipment",
-      "event": [],
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "disabled": false,
-            "type": "default"
-          }
-        ],
-        "auth": {
-          "type": "bearer",
-          "bearer": {
-            "key": "token",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJyb2xlIjoiQWRtaW4iLCJleHAiOjE3NjE1NjY5NDd9.kmrvGTU0IF0rrvMWx7h7DK3yMfHUQhA-X6fZnILvLLo",
-            "type": "string"
-          }
-        },
-        "description": "",
-        "url": {
-          "raw": "http://127.0.0.1:8000/equipment",
-          "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1:8000"
-          ],
-          "path": [
-            "equipment"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"name\": \"Ball\",\n  \"category_id\": \"2\",\n  \"total_quantity\": 8,\n  \"available_quantity\": 3\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        }
-      }
-    },
-    {
-      "name": "Delete Equipment",
-      "event": [],
-      "request": {
-        "method": "DELETE",
-        "header": [],
-        "auth": {
-          "type": "bearer",
-          "bearer": {
-            "key": "token",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-            "type": "string"
-          }
-        },
-        "description": "",
-        "url": {
-          "raw": "http://127.0.0.1:8000/equipment/9",
-          "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1:8000"
-          ],
-          "path": [
-            "equipment",
-            "9"
-          ],
-          "query": [],
-          "variable": []
-        }
-      }
-    },
-    {
-      "name": "Delete an Equipment Category",
-      "event": [],
-      "request": {
-        "method": "DELETE",
-        "header": [],
-        "auth": {
-          "type": "bearer",
-          "bearer": {
-            "key": "token",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJyb2xlIjoiQWRtaW4iLCJleHAiOjE3NjE1Njc2MDB9.yqadJMK8O1j_-Dd1H2YStEMtA38gTqA802p9TPcVxAU",
-            "type": "string"
-          }
-        },
-        "description": "",
-        "url": {
-          "raw": "http://127.0.0.1:8000/equipment_category/5",
-          "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1:8000"
-          ],
-          "path": [
-            "equipment_category",
-            "5"
-          ],
-          "query": [],
-          "variable": []
-        }
-      }
-    },
-    {
-      "name": "Get All Equipment Category",
-      "event": [],
-      "request": {
-        "method": "GET",
-        "header": [],
-        "auth": {
-          "type": "bearer",
-          "bearer": {
-            "key": "token",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJyb2xlIjoiQWRtaW4iLCJleHAiOjE3NjE1Njc2MDB9.yqadJMK8O1j_-Dd1H2YStEMtA38gTqA802p9TPcVxAU",
-            "type": "string"
-          }
-        },
-        "description": "",
-        "url": {
-          "raw": "http://127.0.0.1:8000/equipment_category",
-          "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1:8000"
-          ],
-          "path": [
-            "equipment_category"
-          ],
-          "query": [],
-          "variable": []
-        }
-      }
-    },
-    {
-      "name": "Get All Equipment",
-      "event": [],
-      "request": {
-        "method": "GET",
-        "header": [],
-        "auth": {
-          "type": "bearer",
-          "bearer": {
-            "key": "token",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJyb2xlIjoiQWRtaW4iLCJleHAiOjE3NjE1NjY5NDd9.kmrvGTU0IF0rrvMWx7h7DK3yMfHUQhA-X6fZnILvLLo",
-            "type": "string"
-          }
-        },
-        "description": "",
-        "url": {
-          "raw": "http://127.0.0.1:8000/equipment",
-          "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1:8000"
-          ],
-          "path": [
-            "equipment"
-          ],
-          "query": [
-            {
-              "key": "",
-              "value": ""
-            }
-          ],
-          "variable": []
-        }
-      }
-    },
-    {
-      "name": "School leading",
-      "event": [],
+      "name": "Get All Users",
       "request": {
         "method": "GET",
         "header": [],
@@ -240,44 +14,7 @@
         },
         "description": "",
         "url": {
-          "raw": "http://127.0.0.1:8000",
-          "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1:8000"
-          ],
-          "path": [],
-          "query": [],
-          "variable": []
-        }
-      }
-    },
-    {
-      "name": "Update Equipment",
-      "event": [],
-      "request": {
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "disabled": false,
-            "type": "default"
-          }
-        ],
-        "auth": {
-          "type": "bearer",
-          "bearer": {
-            "key": "token",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-            "type": "string"
-          }
-        },
-        "description": "",
-        "url": {
-          "raw": "http://127.0.0.1:8000/equipment/7",
+          "raw": "http://127.0.0.1:8000/users",
           "protocol": "http",
           "host": [
             "127",
@@ -286,40 +23,24 @@
             "1:8000"
           ],
           "path": [
-            "equipment",
-            "7"
+            "users"
           ],
           "query": [],
           "variable": []
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"name\": \"Baseball Bat\",\n  \"category_id\":\"2\",\n  \"total_quantity\":\"4\",\n  \"available_quantity\":\"3\"\n}\n",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
         }
       }
     },
     {
-      "name": "Update and Equipment Category",
-      "event": [],
+      "name": "View Borrow Requests",
       "request": {
-        "method": "PUT",
+        "method": "GET",
         "header": [],
         "auth": {
-          "type": "bearer",
-          "bearer": {
-            "key": "token",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJyb2xlIjoiQWRtaW4iLCJleHAiOjE3NjE1Njc2MDB9.yqadJMK8O1j_-Dd1H2YStEMtA38gTqA802p9TPcVxAU",
-            "type": "string"
-          }
+          "type": "noauth"
         },
         "description": "",
         "url": {
-          "raw": "http://127.0.0.1:8000/equipment_category/5",
+          "raw": "http://127.0.0.1:8000/borrow_requests",
           "protocol": "http",
           "host": [
             "127",
@@ -328,26 +49,15 @@
             "1:8000"
           ],
           "path": [
-            "equipment_category",
-            "5"
+            "borrow_requests"
           ],
           "query": [],
           "variable": []
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"category_name\":\"Stationery\",\n  \"description\":\"Books,Copy,Magazine and More\"\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
         }
       }
     },
     {
       "name": "login",
-      "event": [],
       "request": {
         "method": "POST",
         "header": [],
@@ -384,7 +94,6 @@
     },
     {
       "name": "signup",
-      "event": [],
       "request": {
         "method": "POST",
         "header": [],
@@ -393,7 +102,7 @@
         },
         "description": "",
         "url": {
-          "raw": "http://127.0.0.1:8000/signup",
+          "raw": "http://127.0.0.1:8000/signup?Content-Type=application/json",
           "protocol": "http",
           "host": [
             "127",
@@ -404,8 +113,22 @@
           "path": [
             "signup"
           ],
-          "query": [],
+          "query": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
           "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"student101\",\n  \"password\": \"password123\",\n  \"full_name\": \"Alice Smith\",\n  \"role\": \"Student\",\n  \"email\": \"alice.smith@example.com\",\n  \"phone_number\": \"1234567890\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
         }
       }
     }
