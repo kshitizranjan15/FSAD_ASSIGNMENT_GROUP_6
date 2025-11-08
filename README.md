@@ -41,7 +41,7 @@ The School Lending Equipment Management System is designed to streamline the pro
 
 ### Backend
 - **FastAPI**: Modern, fast web framework for building APIs
-- **MySQL**: Database management system
+- **MySQL** (db4free.net): Free MySQL hosting service for development
 - **SQLAlchemy**: SQL toolkit and ORM
 - **Passlib & JWT**: Authentication and security
 - **Python 3.13+**: Programming language
@@ -57,7 +57,7 @@ The School Lending Equipment Management System is designed to streamline the pro
 ### Prerequisites
 - Python 3.13 or higher
 - Node.js 16 or higher
-- MySQL 8.0 or higher
+- MySQL Database (using db4free.net)
 
 ### Installation
 
@@ -73,17 +73,35 @@ The School Lending Equipment Management System is designed to streamline the pro
    pip install -r requirements.txt
    ```
 
-   Create a .env file in the backend directory:
+   Create a .env file in the backend directory with the following configuration:
    ```env
-   DATABASE_URL=mysql+mysqlconnector://user:password@localhost:3306/school_equipment_db
+   DB_HOST=db4free.net
+   DB_PORT=3306
+   DB_USER=your_db4free_username
+   DB_PASSWORD=your_db4free_password
+   DB_NAME=your_database_name
    SECRET_KEY=your_secret_key_here
    ```
+
+   Note: Sign up at [db4free.net](https://db4free.net) to get your database credentials if you haven't already.
 
 3. **Frontend Setup**
    ```bash
    cd ../frontend
    npm install
    ```
+
+### Database Setup
+
+1. **Register at db4free.net**
+   - Visit [db4free.net](https://db4free.net)
+   - Sign up for a new account
+   - Create a new database
+   - Note down your credentials
+
+2. **Database Configuration**
+   - Use the credentials provided by db4free.net in your .env file
+   - The database schema will be automatically created when you run the application
 
 ### Running the Application
 
@@ -126,6 +144,12 @@ FSAD_ASSIGNMENT_equipment_portal/
 └── README.md
 ```
 
+## Important Notes
+
+- **Database Hosting**: This project uses db4free.net for MySQL hosting. While this is suitable for development and testing, for production use, consider using a more reliable database hosting service.
+- **Database Performance**: db4free.net is a free service with limited resources, so you might experience slower response times compared to a local or production database.
+- **Database Reliability**: Regular backups are recommended as db4free.net does not guarantee data persistence.
+
 ## Contributing
 
 1. Fork the repository
@@ -137,13 +161,6 @@ FSAD_ASSIGNMENT_equipment_portal/
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-* FastAPI Documentation
-* React Documentation
-* MySQL Documentation
-* Contributors and team members
 
 ## Contact
 
