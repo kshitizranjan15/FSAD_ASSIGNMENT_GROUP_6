@@ -1,5 +1,5 @@
 // src/types/models.ts
-export type RoleType = 'student' | 'staff' | 'admin';
+export type RoleType = 'Student' | 'Staff' | 'Admin';
 
 // Matches the response from POST /users/login (with assumed user details enrichment)
 export interface AuthResponse {
@@ -29,6 +29,11 @@ export interface LendingRequestDB {
   quantity: number;
   status: 'Pending' | 'Approved' | 'Issued' | 'Returned' | 'Rejected';
   // Other fields...
+}
+
+export interface LendingRequest extends LendingRequestDB {
+  requester_name?: string;
+  equipment_name?: string;
 }
 
 // Data model for POST /lending/request

@@ -62,7 +62,7 @@ const AuthPage: React.FC = () => {
           setAuth(authData.access_token, authData.role, authData.user_id, authData.full_name);
           setNotification({ message: `Login successful! Welcome, ${authData.full_name}.`, type: 'success' });
           // Clear form data on success
-          setFormData({ username: '', password: '', full_name: '', email: '', phone_number: '', role: 'student' });
+          setFormData({ username: '', password: '', full_name: '', email: '', phone_number: '', role: 'Student' });
         } else {
           throw new Error("Invalid response from login API.");
         }
@@ -70,7 +70,7 @@ const AuthPage: React.FC = () => {
         // Signup success (Admin-only), which returns a success message
         setNotification({ message: 'User created successfully! You can now log in.', type: 'success' });
         setIsLoginView(true); // Switch to login view after successful signup
-        setFormData({ username: '', password: '', full_name: '', email: '', phone_number: '', role: 'student' });
+        setFormData({ username: '', password: '', full_name: '', email: '', phone_number: '', role: 'Student' });
       }
 
     } catch (error) {
@@ -82,7 +82,7 @@ const AuthPage: React.FC = () => {
   };
 
 
-  if (isLoggedIn && userRole !== 'admin') {
+  if (isLoggedIn && userRole !== 'Admin') {
     return (
         <div className="p-8 max-w-lg mx-auto bg-white shadow-xl rounded-xl mt-10 text-center">
             <Home className="w-12 h-12 text-blue-500 mx-auto mb-4" />
@@ -107,7 +107,7 @@ const AuthPage: React.FC = () => {
       </h2>
       
       {/* Role-based message for Admin on the Auth Page */}
-      {(isLoggedIn && userRole === 'admin') && (
+      {(isLoggedIn && userRole === 'Admin') && (
         <div className='mb-4 p-3 bg-indigo-100 border border-indigo-300 text-indigo-800 rounded-lg'>
             <p className='font-semibold'>Admin Mode:</p>
             <p className='text-sm'>You are logged in. Use this page to create new user accounts.</p>

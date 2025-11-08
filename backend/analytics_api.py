@@ -19,7 +19,7 @@ def get_top_requested(current_user: dict = Depends(role_required(["Admin"]))):
         cur = conn.cursor(dictionary=True)
         query = """
         SELECT E.name AS equipment_name, SUM(R.quantity) AS total_units_borrowed
-        FROM lending_requests R JOIN equipments E ON R.equipment_id = E.equipment_id
+        FROM lending_requests R JOIN equipment E ON R.equipment_id = E.equipment_id
         GROUP BY E.equipment_id, E.name ORDER BY total_units_borrowed DESC LIMIT 5;
         """
         cur.execute(query)

@@ -164,7 +164,7 @@ const StudentStaffDashboard: React.FC<StudentStaffDashboardProps> = ({ setAppErr
                               className="px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg hover:bg-blue-600 transition duration-150 disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center"
                           >
                               {item.available_quantity > 0 ? (
-                                <>Request Loan <ArrowRight className='w-4 h-4 ml-1'/></>
+                                <>Borrow Item <ArrowRight className='w-4 h-4 ml-1'/></>
                                 ) : (
                                 'Out of Stock'
                               )}
