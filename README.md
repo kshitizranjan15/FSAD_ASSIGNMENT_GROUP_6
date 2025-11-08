@@ -158,10 +158,6 @@ FSAD_ASSIGNMENT_equipment_portal/
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Contact
 
 * Project Link: [https://github.com/kshitizranjan15/FSAD_ASSIGNMENT_GROUP_6](https://github.com/kshitizranjan15/FSAD_ASSIGNMENT_GROUP_6)
